@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import myPhoto from "././images/myPhoto.jpg";
+import ColorSchemesExample from "./NavBar";
+import { Card } from "react-bootstrap";
+import Name from "./Name";
+import Price from "./Price";
+import Description from "./Description";
+import Image from "./Image";
+import product from "./Product";
+import "./style.css";
 
-function App() {
+const App = () => {
+  const firstName = "Mohamed";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <ColorSchemesExample />
 
+      <body>
+        <div className="container">
+          <p>Hello, {firstName ? firstName : "there"}!</p>
+          {firstName && <img src={myPhoto} className="myPhoto" alt="myPhoto" />}
+
+          <div class="grid-3-cols">
+            <figure class="chair">
+              <Card style={{ width: "22rem" }}>
+                <Card.Body>
+                  <Image image={product.image} />
+                  <Name name={product.name} />
+                  <Price price={product.price} />
+                  <Description description={product.description} />
+                </Card.Body>
+              </Card>
+            </figure>
+            <figure class="chair">
+              <Card style={{ width: "22rem" }}>
+                <Card.Body>
+                  <Image image={product.image} />
+                  <Name name={product.name} />
+                  <Price price={product.price} />
+                  <Description description={product.description} />
+                </Card.Body>
+              </Card>
+            </figure>
+            <figure class="chair">
+              <Card style={{ width: "22rem" }}>
+                <Card.Body>
+                  <Image image={product.image} />
+                  <Name name={product.name} />
+                  <Price price={product.price} />
+                  <Description description={product.description} />
+                </Card.Body>
+              </Card>
+            </figure>
+          </div>
+        </div>
+      </body>
+    </>
+  );
+};
 export default App;
